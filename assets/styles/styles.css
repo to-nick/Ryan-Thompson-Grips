@@ -1,0 +1,742 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body, html{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+/* NAVBAR STYLES */
+
+.landing-page nav{
+    /* background-color: black; */
+    position: absolute;
+    opacity: 100%;
+}
+
+.all-other-pages nav{
+    position: static;
+    background-color: black;
+    /* margin-bottom: 0.5rem; */
+}
+
+nav{
+    color: rgb(220, 210, 210);
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 1rem;
+    gap: 2rem; 
+    z-index: 11;
+    width: 100%;
+    align-items: center;
+}
+
+nav .logo{
+    display: flex;
+    font-size: clamp(1rem, 3vw, 5rem);
+    font-family: "Oxanium", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item:not(:last-child) a::after {
+    content: "\00a0\00a0|"
+}
+
+nav ul{
+    display: flex;
+    color: inherit;
+    list-style: none;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    font-size: clamp(1.5rem, 2vw, 3rem);
+    font-family: "Carrois Gothic", sans-serif;
+}
+
+nav a, .logo{
+    color: inherit;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+ul li:hover{
+    color: white;
+}
+
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+
+.bar{
+    display: block;
+    width: 1.75rem;
+    height: 0.25rem;
+    margin: 0.3rem auto;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+
+@media(max-width: 1247px){
+    nav .logo{
+        font-size: 2.5rem;
+    }
+}
+
+@media(max-width: 1156px){
+    nav .logo{
+        font-size: 2rem;
+    }
+}
+
+@media(max-width: 1066px){
+    nav .logo{
+        font-size: 1.75rem;
+    }
+    nav ul{
+        font-size: 1.3rem;
+    }
+}
+
+@media(max-width: 944px){
+    nav .logo{
+        font-size: 1.4rem;
+    }
+    nav ul{
+        font-size: 1rem;
+    }
+}
+
+@media(max-width: 768px){
+    .hamburger{
+        display: block;
+        position: relative;
+        background-color: #676767;
+        padding: 0.3rem 0.3rem;
+        border-radius: 10px;;
+        z-index: 12;
+        align-content: center;
+        
+    }
+
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(0.55rem) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-0.55rem) rotate(-45deg);
+    }
+
+    .nav-list{
+        position: fixed;
+        font-size: 2rem;
+        right: -100%;
+        top: 4.2rem;
+        gap: 0;
+        flex-direction: column;
+        background-color: rgba(93, 92, 92, 0.97);
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        transition: 0.3s;
+        z-index: 11;
+    }
+
+    .nav-list.active .nav-item a::after {
+        content: "";
+    }
+
+    .nav-item{
+        margin: 1rem 0;
+    }
+
+    .nav-list.active{
+        right: 0;
+    }
+
+    nav .logo{
+        font-size: 2rem;
+    }
+}
+
+@media(max-width: 655px){
+    nav .logo{
+        font-size: 1.75rem;
+    }
+}
+
+@media(max-width: 550px){
+    .landing-page nav{
+        position: relative;
+        background-color: black;
+        top: 0%;
+    }
+}
+
+@media(max-width: 530px){
+    nav .logo{
+        font-size: 1.5rem;
+    }
+}
+
+@media(max-width: 375px){
+    nav .logo{
+        font-size: 1.20rem;
+    }
+}
+
+
+/*INDEX STYLES */
+
+/*LANDING IMAGE*/
+.landing-image-container{
+    position: relative;
+    top: 0;
+    z-index: 1;
+    margin: 0;
+}
+
+.landing-image{
+    width: 100%;
+    height: auto;
+}
+
+/*INTRODUCTION TEXT*/
+.intro-container{
+    background-color: rgb(93, 92, 91);
+    display: flex;
+    padding: 2rem 4rem;
+}
+
+.intro-text h2{
+    color: #161515;
+    font-family: 'Oxanium', sans-serif;
+    font-size: clamp(1.5rem, 4vw, 6rem);
+    font-weight: 500;
+}
+
+.intro-text p{
+    color: white;
+    font-family: 'Kanit', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 3rem);
+    color: rgb(220, 210, 210);
+    font-weight: 100;
+}
+
+@media(max-width: 425px){
+    .intro-container{
+        padding: 1.5rem 3rem;
+    }
+}
+
+/*WORK CATEGORY VIDEOS*/
+.work-categories{
+    display: flex;
+    font-family: "Carrois Gothic", sans-serif;
+    width: 100%;
+    padding: 1rem;
+    background-color: #cbcbcb;
+    gap: 1rem;
+}
+
+.excerpt-wrapper{
+    position: relative;
+    width: 50%;
+    height: auto;
+}
+
+.excerpt-header{
+    position: absolute;
+    z-index: 11;
+    bottom: 10%;
+    right: 10%;
+    color: black; 
+    font-size: clamp(1.5rem, 2vw, 6rem);
+    background-color: rgb(128, 128, 128, 0.5);
+    border-radius: 20px;
+    padding: 0 1rem;
+    transition: transform 0.2s ease-in;
+}
+
+.excerpt-header:hover{
+    background-color: rgb(128, 128, 128, 0.9);
+    cursor: pointer;
+    color: white;
+    transform: scale(1.2);
+}
+
+.commercial-video{
+    width: 100%;
+    height: auto;
+}
+
+@media(max-width: 700px){
+    .work-categories{
+        padding: 1rem 1rem;
+    }
+}
+
+@media(max-width: 600px){
+    .work-categories{
+        flex-wrap: wrap;
+    }
+    .excerpt-wrapper{
+        width: 100%;
+    }
+}
+
+/* NARRATIVE and COMMERCIAL SECTION STYLES*/
+
+.page-heading{
+    position: relative;
+    background: linear-gradient(to top, #454545 0%, rgb(34, 33, 33) 100%);
+    color: rgb(220, 210, 210);
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 400;
+    font-size: clamp(1rem, 6vw, 6rem);
+    text-align: center;
+    padding: 4rem 2rem 2rem 2rem;
+}
+
+.previous-work-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    background-color: #454545;
+    justify-content: space-around;
+    padding:  3rem 2rem;
+    gap: 0.5rem 1rem;
+}
+
+.video-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    color: black;
+    gap: 0.5rem;
+}
+
+.narrative-video{
+    position: relative;
+    width: 100%;
+    height: auto;
+    align-content: center;
+    text-align: center;
+}
+
+.video-container p{
+    font-size: clamp(1rem, 2vw, 3rem);
+    font-family: 'Kanit', serif;
+    text-align: center;
+    color: rgb(142, 139, 139)
+}
+
+.video-content{
+    position: relative;
+    background-color: #cbcbcb;
+    font-family: "Oxanium", sans-serif;
+    color: black;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+}
+
+.film-camera-placeholder{
+    opacity: 20%;
+    width: 66%;
+}
+
+.video-content h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    background-color: rgb(191, 187, 187, 0.7);
+    width: 100%;
+    font-size: 3rem;
+    font-family: "Carrois Gothic";
+    border-top: black solid 0.1rem;
+    border-bottom: black solid 0.1rem;
+
+}
+
+.placeholder-background{
+    background-image: url("../content/icons/page\ icons/film-camera-placeholder.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media(max-width: 1440px){
+    .page-heading{
+        padding: 3rem 0 0 0 ;
+    }
+}
+
+@media(max-width: 768px){
+    .previous-work-container{
+    grid-template-columns: 1fr;
+    padding:  2rem 1rem;
+    }
+    .page-heading{
+        padding: 2rem 0 0 0 ;
+    }
+}
+
+@media(max-width: 375px){
+    .video-container{
+        gap: 0;
+    }
+}
+
+/* GEAR AND BIO STYLES */
+
+.gear-page-heading{
+    position: relative;
+    background: linear-gradient(to top, #454545 0%, rgb(34, 33, 33) 100%);
+    color: rgb(220, 210, 210);
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 400;
+    font-size: clamp(4rem, 6vw, 6rem);
+    text-align: center;
+    padding: 4rem 2rem 2rem 2rem;
+}
+
+.gear-container{
+    background-color: #454545;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Kanit';
+    border: none;
+}
+
+.equipment-heading{
+    background: linear-gradient(to bottom, #454545 0%, rgb(25, 24, 24) 100%);
+    border: none;
+}
+
+.gear-container h2{
+    font-size: clamp(2rem, 3vw, 6rem);
+    font-weight: bold;
+}
+
+.gear-container h3{
+    font-size: clamp(1rem, 3vw, 4rem);
+}
+
+.truck-container{
+    display: flex;
+    padding: 2rem 0 2rem 6rem;
+}
+
+.truck-image{
+    width: 60%;
+}
+
+.truck-info{
+    display: flex;
+    flex-direction: column;
+    
+    padding: 3rem;
+    font-size: clamp(1rem, 2vw, 8rem);
+    justify-content: center;
+    width: 40%;
+}
+
+.truck-info table{
+    width: 100%;
+}
+
+.equipment-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgb(25, 24, 24);
+    color: rgb(220, 210, 210)
+}
+
+.equipment-container h2{
+    font-size: clamp(2rem, 4vw, 8rem);
+    padding: 3rem;
+}
+
+.equipment-one{
+    display: flex;
+}
+
+.equipment-one h3{
+    font-size: clamp(1rem, 3vw, 4rem);
+    padding-bottom: 1rem;
+}
+
+.ronin-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.ronin-img{
+    width: clamp(8rem, 40vw, 60rem);
+}
+
+.chapman-dolly-container{
+    width: 50%;
+    text-align: center;
+}
+
+.chapman-dolly-img{
+    width: clamp(8rem, 40vw, 60rem);
+    transform: translate(0, 30%);
+}
+
+.equipment-two{
+    display: flex;
+}
+
+.master-wheels-container{
+    width: 50%;
+    text-align: center;
+    padding: 5rem;
+}
+
+.masterwheels-img{
+    width: 100%;
+    align-self: center;
+    padding-top: 2rem;
+    width: clamp(8rem, 40vw, 60rem);
+}
+
+.gfm-slider-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 5rem;
+    width: 50%;
+}
+
+.gfm-slider-container p{
+    font-size: clamp(1rem, 2vw, 2.5rem);
+}
+
+.gfm-slider-img{
+    position: relative;
+    width: 100%;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.comprehensive-gear-container{
+    font-size: clamp(2rem, 4vw, 8rem);
+    text-align: center;
+    padding: 1rem;
+}
+
+.comprehensive-gear-container a{
+    color: rgb(220, 210, 210);
+}
+
+.bio-container{
+    display: flex;
+    margin: 0 3rem 3rem 3rem;
+    gap: 2rem;
+    align-items: center;
+}
+
+.bio-image{
+    width: 40%;
+}
+
+.bio-container p{
+    font-size: clamp(1rem, 3vw, 4rem);
+}
+
+@media(max-width: 1650px){
+    .truck-image{
+        width: 70%;
+    }
+
+    .truck-info{
+        padding: 2rem;
+    }
+
+    .equipment-heading h2{
+        padding: 1rem;
+    }
+
+    .master-wheels-container{
+        padding: 2rem;
+    }
+
+    .gfm-slider-container{
+        padding: 2rem;
+    }
+}
+
+@media(max-width: 1111px){
+    .truck-container{
+        padding: 2rem;
+    }
+
+    .gear-page-heading{
+        padding: 2rem;
+    }
+}
+
+@media(max-width: 767px){
+    .gear-page-heading{
+        padding: 1rem;
+    }
+
+    .truck-container{
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .truck-image{
+        width: 100%;
+    }
+
+    .truck-info{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 1rem 1rem 0 1rem;
+    }
+
+    .truck-info table{
+        font-size: clamp(1rem, 3vw, 4rem);
+        transform: translate(10%);
+        width: 80%;
+    }
+
+    .equipment-heading h2{
+        padding: 0.5rem 0 1rem 0;
+    }
+
+    .bio-container{
+        flex-direction: column;
+    }
+
+    .bio-image{
+        width: 80%;
+    }
+
+    .bio-container p{
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media(max-width: 400px){
+    .truck-info table{
+        width: 100%;
+    }
+
+    .gfm-slider-container{
+        padding: 2rem 0.5rem;
+    }
+
+    .bio-image{
+        width: 100%;
+    }
+}
+
+
+/*FOOTER STYLES*/
+
+footer{
+    background-color: black;
+    color: rgb(220, 210, 210);
+    font-family: "Oxanium", sans-serif;
+}
+
+.footer-container{
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: space-around;
+}
+
+.footer-contact{
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.contact-container{
+    display: flex;
+    align-items: center;
+    font-size: clamp(1rem, 2vw, 20rem) ;
+}
+
+.email-icon, .phone-icon{
+    height: 3rem;
+    padding: 0.5rem;
+}
+
+.contact-container a{
+    padding: 1rem;
+    padding-bottom: 1rem;
+}
+
+.contact-container p{
+    font-size: inherit;
+}
+
+.icon-container{
+    display: flex;
+    align-items: center;
+}
+
+.instagram-icon{
+    text-align: center;
+    height: 4rem;
+}
+
+.imdb-icon{
+    text-align: center;
+    height: 5rem;
+}
+
+.copyright{
+    text-align: center;
+    position: relative;
+    bottom: 0%;
+    padding-bottom: 1rem;
+    font-family: sans-serif;
+}
+
+@media(max-width: 742px){
+    .footer-container{
+        flex-direction: column;
+    }
+
+    .footer-contact{
+        width: 100%;
+    }
+
+    .footer-navigation{
+        display: none;
+    }
+}
