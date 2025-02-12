@@ -9,7 +9,10 @@ async function loadComponent(id, file){
         const component = await res.text();
         document.getElementById(id).innerHTML = component;
 
-        activateHamburgerMenu();
+        if (id === 'navbar'){
+            activateHamburgerMenu();
+        }
+        
     } catch (error) {
         console.error('There was an error fetching the navbar', error);
     }
@@ -33,7 +36,7 @@ function activateHamburgerMenu(){
         navMenu.classList.toggle("active");
     })
 
-    document.querySelectorAll("nav-item").forEach(link => link.addEventListener("click", () => {
+    document.querySelectorAll(".nav-item").forEach(link => link.addEventListener("click", () => {
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
     }))
