@@ -352,6 +352,8 @@ ul li:hover{
     width: 100%;
     text-align: center;
     align-content: center;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
 }
 
 .film-camera-placeholder{
