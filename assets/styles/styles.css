@@ -280,7 +280,6 @@ ul li:hover{
     height: auto;
 }
 
-
 @media(max-width: 600px){
     .work-categories{
         flex-wrap: wrap;
