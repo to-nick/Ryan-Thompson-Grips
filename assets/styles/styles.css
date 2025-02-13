@@ -244,9 +244,9 @@ ul li:hover{
     display: flex;
     font-family: "Carrois Gothic", sans-serif;
     width: 100%;
-    padding: 1rem;
+    padding: 0.25rem 0.25rem 0 0.25rem;
     background-color: #cbcbcb;
-    gap: 1rem;
+    gap: 0.25rem;
 }
 
 .excerpt-wrapper{
@@ -280,11 +280,6 @@ ul li:hover{
     height: auto;
 }
 
-@media(max-width: 700px){
-    .work-categories{
-        padding: 1rem 1rem;
-    }
-}
 
 @media(max-width: 600px){
     .work-categories{
