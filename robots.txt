@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://rtgrips.com.au/sitemap.xml
