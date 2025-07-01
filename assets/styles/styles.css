@@ -293,7 +293,18 @@ ul li:hover{
     background: linear-gradient(to top, #454545 0%, rgb(34, 33, 33) 100%);
 }
 
-.page-heading{
+.page-heading-commercial{
+    position: relative;
+    color: rgb(220, 210, 210);
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 400;
+    font-size: clamp(1rem, 6vw, 6rem);
+    text-align: center;
+    padding: 4rem 2rem 2rem 2rem;
+}
+
+.page-heading-narrative{
+    background: linear-gradient(to top, #454545 0%, rgb(34, 33, 33) 100%);
     position: relative;
     color: rgb(220, 210, 210);
     font-family: 'Oxanium', sans-serif;
